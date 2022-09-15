@@ -1,6 +1,6 @@
 <h1>BE-GY 6473 Applied Mathematics and Statistics for Biomedical Engineers</h1>
 
-<div>Centralized repository for the visualization homework throughout this class.</div><br/>
+<div>Centralized repository for the visualization homework throughout this course @NYU Tandon.</div><br/>
 
 <h3><b>Lab #1</b></h3>
 <img src="lab1/figures/spermatophore.png" width="800px"></img>
