@@ -10,10 +10,6 @@
 <img src="lab2/figures/zebrafish.png" width="800px"></img>
 <img src="lab2/figures/beetles.png" width="800px"></img>
 
-<h3><b>Lab #3</b></h3>
-<img src="lab3/figures/zebrafish.png" width="800px"></img>
-<img src="lab3/figures/beetles.png" width="800px"></img>
-
 <h3><b>Lab #4</b></h3>
 <img src="lab4/figures/zebrafish.png" width="800px"></img>
 <img src="lab4/figures/beetles.png" width="800px"></img>

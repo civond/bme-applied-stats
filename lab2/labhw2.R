@@ -26,12 +26,9 @@ standard_error(x)
 
 #Question 2C
 data2 <- tibble::rowid_to_column(data2, "index")
-
-
 ggplot(data=data2, aes(x=index,y=numberOfBeetles)) +
   geom_line(color="blue") + 
   geom_point() +
-  geom_smooth(method=lm) +
   labs(title="Number of Beetles Visiting Per Night", 
        x="Night",
        y="Number of Beetles") +
