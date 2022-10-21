@@ -10,10 +10,5 @@
 <img src="lab2/figures/zebrafish.png" width="800px"></img>
 <img src="lab2/figures/beetles.png" width="800px"></img>
 
-<h3><b>Lab #4</b></h3>
-<img src="lab4/figures/zebrafish.png" width="800px"></img>
-<img src="lab4/figures/beetles.png" width="800px"></img>
-
 <h3><b>Lab #5</b></h3>
-<img src="lab5/figures/zebrafish.png" width="800px"></img>
-<img src="lab5/figures/beetles.png" width="800px"></img>
+<img src="lab5/figures/Figure_1.png" width="800px"></img>
