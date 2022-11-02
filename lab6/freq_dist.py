@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import statistics
 
@@ -13,7 +12,7 @@ plt.hist(values,
          bins=20)
 plt.title('Median Angle of Direction Change')
 plt.xlabel('Degrees per Second')
-plt.ylabel('Angle')
+plt.ylabel('Frequency')
 
 print('Mean: ' + str(mean))
 print('Standard Deviation: '+ str(stdev))
