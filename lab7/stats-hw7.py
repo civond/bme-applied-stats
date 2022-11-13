@@ -13,12 +13,17 @@ mean_Ex = statistics.mean(exercise)
 std_Ex = statistics.stdev(exercise)
 n_Ex = len(exercise)
 
+print("Mean no exercise: " + str(mean_Noex))
+print("Standard Dev no exercise: " + str(std_Noex))
+print("Mean exercise: " + str(mean_Ex))
+print("Standard Dev exercise: " + str(std_Ex))
+
 mean_diff = mean_Noex - mean_Ex
 
-pooled_variance = (((n_Noex-1)*(mean_Noex**2))
-                   + ((n_Ex-1)*(mean_Ex**2)))\
-                  /(n_Ex+n_Noex)
-standard_error = math.sqrt(pooled_variance*((1/n_Ex) + (1/n_Noex)))
+pooled_variance = (((n_Noex-1)*(std_Noex**2))
+                   + ((n_Ex-1)*(std_Ex**2)))\
+                  /(n_Ex+n_Noex-2)
+standard_error = math.sqrt(pooled_variance*((1/(n_Ex)) + (1/(n_Noex))))
 
 t = 2.228 #from t-table
 
@@ -37,7 +42,7 @@ print("Test Statistic: " + str(t_value))
 
 #Question 2
 kid = [-3.23,-1.78,-0.72,-0.57,0.32,0.46,1.07,1.77,2.22]
-unrelated = [-3.26,-2.71,-0.13,-3.24,-2.56,-0.62,-0.12,1.12,1.74]
+unrelated = [-3.26,-2.71,-0.13,-3.24,-2.56,-0.62,0.12,1.12,1.74]
 difference = []
 
 i=0
@@ -46,6 +51,7 @@ while i in range(0,len(kid)):
     i+=1
 mean_diff_goat = statistics.mean(difference)
 print("Mean Difference: " + str(mean_diff_goat))
+
 temp = []
 for item in difference:
     temp.append((item-mean_diff_goat)**2)
