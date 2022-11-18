@@ -19,9 +19,9 @@ out = list(reversed(list(zip_longest(*iterables, fillvalue=np.nan))))
 df = pd.DataFrame(out, columns=['Unbiased',
                                 'Male-Bias',
                                 'Fem-Bias'])
-#df=df.dropna()
-fvalue, pvalue = stats.f_oneway(df['Unbiased'], df['Male-Bias'], df['Fem-Bias'])
-#print(fvalue, pvalue)
+dftest =df.dropna()
+fvalue, pvalue = stats.f_oneway(dftest['Unbiased'], dftest['Male-Bias'], dftest['Fem-Bias'])
+print(fvalue, pvalue)
 
 
 df_melt = pd.melt(df.reset_index(), id_vars=['index'],
@@ -33,7 +33,7 @@ df_melt = pd.melt(df.reset_index(), id_vars=['index'],
 df_melt = df_melt.dropna().reset_index()
 df_melt.drop(["level_0", "index"], axis = 1, inplace=True)
 df_melt.columns=['treatment','value']
-print(df_melt)
+print(df_melt.head(25))
 
 res = stat()
 res.tukey_hsd(df=df_melt, res_var='value', xfac_var='treatment', anova_model='value ~ C(treatment)')
@@ -54,8 +54,8 @@ fem_mean = statistics.mean(female_biased)
 fem_stdev = statistics.stdev(female_biased)
 fem_count = len(female_biased)
 
-X_hat = ((1/25)*(unb_count*unb_mean + male_count*male_mean + fem_count*fem_mean))
-SS_groups = ((unb_count*(unb_mean-X_hat))**2 + male_count*(male_mean-X_hat)**2 + fem_count*(fem_mean-X_hat)**2)
+X_hat = (1/25)*(unb_count*unb_mean + male_count*male_mean + fem_count*fem_mean)
+SS_groups = unb_count*(unb_mean-X_hat)**2 + male_count*(male_mean-X_hat)**2 + fem_count*(fem_mean-X_hat)**2
 MS_Groups = SS_groups/2
 print("X hat: " + str(X_hat))
 print("SS Groups: " + str(SS_groups))
